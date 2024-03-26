@@ -42,11 +42,11 @@ class WhetherPage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Today 30°C',
+                    'Today 300°F',
                     style: TextStyle(
                       fontSize: 30,
                       fontFamily: 'monospace',
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   Icon(
@@ -91,6 +91,9 @@ class WhetherPage extends StatelessWidget {
                 WhetherCards(),
                 WhetherCards(),
                 WhetherCards(),
+                WhetherCards(),
+                WhetherCards(),
+                WhetherCards(),
               ],
             ),
           ),
@@ -98,8 +101,55 @@ class WhetherPage extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const Placeholder(
-            fallbackHeight: 200,
+          Container(
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.centerLeft,
+            child: const Text(
+              'Additional Information',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  Icon(
+                    Icons.water_drop_outlined,
+                    size: 30,
+                  ),
+                  Text('Humidity '),
+                  Text('30%'),
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(
+                    Icons.air_outlined,
+                    size: 30,
+                  ),
+                  Text('Wind Speed'),
+                  Text('10 km/h'),
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(
+                    Icons.umbrella_outlined,
+                    size: 30,
+                  ),
+                  Text('Rain'),
+                  Text('0%'),
+                ],
+              ),
+            ],
           ),
         ],
       ),
