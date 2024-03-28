@@ -1,39 +1,46 @@
 import 'package:flutter/material.dart';
 
 class WhetherCards extends StatelessWidget {
-  const WhetherCards({super.key});
+  final IconData icon;
+  final String title;
+  final int temp;
+  const WhetherCards(
+      {super.key, required this.icon, required this.title, required this.temp});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(5),
       width: 150,
-      child: const Card(
+      child: Card(
         elevation: 3,
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              'Today 30°C',
-              style: TextStyle(
+              title,
+              style: const TextStyle(
                 fontSize: 14,
                 fontFamily: 'monospace',
                 fontWeight: FontWeight.w300,
               ),
             ),
             Icon(
-              Icons.cloud,
+              icon,
               size: 60,
             ),
+            const SizedBox(
+              height: 5,
+            ),
             Text(
-              '301.17',
-              style: TextStyle(
+              '$temp°F',
+              style: const TextStyle(
                 fontSize: 10,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
           ],
